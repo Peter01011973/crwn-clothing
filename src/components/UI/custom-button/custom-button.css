@@ -19,4 +19,14 @@
   background-color: white;
   border: 1px solid black;
 }
+
+.custom-button.google-button {
+  background-color: #4285f4;
+  color: white;
+}
+
+.custom-button.google-button:hover {
+  border: none;
+  background-color: #357ae8;
+}
 /*# sourceMappingURL=custom-button.css.map */
