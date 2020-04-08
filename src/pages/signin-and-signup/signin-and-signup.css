@@ -1,4 +1,11 @@
 .signin-and-signup {
-  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px auto;
 }
 /*# sourceMappingURL=signin-and-signup.css.map */
