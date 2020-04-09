@@ -38,4 +38,7 @@ $google-blue: #4285f4;
             border: 1px solid white;
         }     
     }
+    &.disabled {
+        cursor: not-allowed;
+    }
 }

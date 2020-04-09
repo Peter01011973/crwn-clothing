@@ -47,4 +47,8 @@
   background-color: black;
   border: 1px solid white;
 }
+
+.custom-button.disabled {
+  cursor: not-allowed;
+}
 /*# sourceMappingURL=custom-button.css.map */
