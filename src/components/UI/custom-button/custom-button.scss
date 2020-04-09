@@ -13,6 +13,8 @@ $google-blue: #4285f4;
     line-height: 50px;
     font-weight: bolder;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
     &:hover {
         color: black;
         background-color: white;
@@ -26,5 +28,14 @@ $google-blue: #4285f4;
             background-color:#357ae8;
         }
     }
-
+    .inverted {
+        color: black;
+        background-color: white;
+        border: 1px solid black;  
+        &:hover {
+            color: white;
+            background-color: black;
+            border: 1px solid white;
+        }     
+    }
 }
