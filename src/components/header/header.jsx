@@ -23,8 +23,7 @@ const Header = ({ currentUser, hidden }) => {
                 <NavLink to = '/contact' className = 'option'>CONTACT</NavLink>
                 { currentUser 
                     ? 
-                    <div className = 'option' onClick = {() => {console.log('sign out');
-                     auth.signOut()}}>SIGN OUT</div> 
+                    <div className = 'option' onClick = {() => auth.signOut()}>SIGN OUT</div> 
                     : 
                     <NavLink to = '/signin' className = 'option'>SIGN IN</NavLink>
                 }
