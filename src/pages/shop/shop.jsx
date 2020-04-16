@@ -18,6 +18,8 @@ class Shop extends React.Component {
     unsubscribeFromSnapshot = null;
 
     componentDidMount() {
+        console.log('didNount');
+        
         const collectionRef = firestore.collection('collections');
 
         this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
@@ -32,6 +34,8 @@ class Shop extends React.Component {
 
     render() {
         const { loading } = this.state;
+        console.log('loading', loading);
+        
         const { match } = this.props;
         return (
             <div className='shop-page'>
