@@ -12,6 +12,7 @@
 .preview-collection .title {
   font-size: 2rem;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .preview-collection .preview {

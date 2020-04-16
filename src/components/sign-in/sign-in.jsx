@@ -38,7 +38,7 @@ export class SignIn extends Component {
                 <form onSubmit = {this.handleSubmit}>
                     <FormInput 
                         type="email" 
-                        name='email' 
+                        name='email'
                         value = {email} 
                         required 
                         handleChange = {this.handleChange}

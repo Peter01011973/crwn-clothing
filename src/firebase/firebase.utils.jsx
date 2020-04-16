@@ -13,10 +13,46 @@ const config = {
   measurementId: "G-493V6JNGCK"
 };
 
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const tranformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title, 
+      items
+    }
+  })
+
+  return tranformedCollection.reduce((object, collection) => {
+    object[collection.title.toLowerCase()] = collection;
+    return object
+  }, {})
+
+}
+
+export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+  const batch = firestore.batch();
+
+  console.log('collectionRef', collectionRef);
+  objectsToAdd.forEach(obj => {
+    const newDocumentRef = collectionRef.doc();
+    batch.set(newDocumentRef, obj)
+  });
+  return await batch.commit();
+  
+}
+
 export const createUserProfileDocument = async (userAuth, additinalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+  // const userCollectionRef = firestore.collection('users');
+  // const userCollectionSnapshot = await userCollectionRef.get();
+  // console.log('userCollectionSnapshot', userCollectionSnapshot.docs.map((doc, index ) => console.log(`${index+1}: `,doc.data())
+  // ));
+  
   const userSnapshot = await userRef.get();
 
   if (!userSnapshot.exists) {

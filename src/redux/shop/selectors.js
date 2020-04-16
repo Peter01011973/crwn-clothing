@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import collection from '../../pages/collection/collection';
 
 const selectShopData = state => state.shop;
 
@@ -10,10 +9,10 @@ export const selectCollections = createSelector(
 
 export const selectCollection = collectionURLParam => createSelector(
     [selectCollections],
-    collections => collections[collectionURLParam]
+    collections => collections ? collections[collectionURLParam] : null
 )
 
 export const selectCollectionForPreview = createSelector(
     [selectCollections],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 )
